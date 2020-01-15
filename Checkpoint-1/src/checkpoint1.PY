@@ -1,16 +1,17 @@
+#Checkpoint 1
+hello = [1, 3, 4, 6, 9]
+
+class polynomial:
+    
+    def __init__(self, constant1):
+        self.constant1 = hello
+     
+
+    def print(self):
+        print(self.constant1)
+
 
 class Test(object):
     print("hello")
-
-
-class polynomial:
-    def __init__(self, x, y):
-        self.x = x 
-        self.y = y 
-
-    def print(self):
-        print("This is x " + self.x)
-
-
-p1 = polynomial("hello", 38)
-p1.print()
+    p1 = polynomial(hello)
+    p1.print()
