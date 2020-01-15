@@ -1,17 +1,31 @@
 #Checkpoint 1
-hello = [1, 3, 4, 6, 9]
+constants1 = [2, 4, -1, 6]
 
 class polynomial:
     
-    def __init__(self, constant1):
-        self.constant1 = hello
-     
+    def __init__(self, constant):
+        self.constant = constants1
+
+    #def calculate(self):
+
+    #def addition(self):
+    
+    #def derive(self):
+
+    #def integrate(self):
 
     def print(self):
-        print(self.constant1)
+        i = 0
+
+        print(format(self.constant[0]) + "+", end = "", flush = True)
+        
+        while i <= 4:
+            print(format(self.constant[i+1]) + "+", end = "", flush = True)
+            if i == 2:
+                break
+            i += 1
 
 
-class Test(object):
-    print("hello")
-    p1 = polynomial(hello)
+class Test:
+    p1 = polynomial(constants1)
     p1.print()
