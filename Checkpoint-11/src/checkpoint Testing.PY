@@ -7,7 +7,7 @@ class polynomial:
     def __init__(self, constant):
         self.constant = constants1
 
-    def 
+    #def 
 
     #def calculate(self):
 
@@ -20,7 +20,7 @@ class polynomial:
 
     #def integrate(self):
 
-"""
+
 
     def print(self):
         i = 0
@@ -34,9 +34,12 @@ class polynomial:
                 break
             i += 1
 
-"""
+
 
 
 class Test:
     p1 = polynomial(constants1)
     p1.print()
+
+    #This is a test line
+    #this is a test line 12
