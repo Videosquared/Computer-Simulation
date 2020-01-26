@@ -18,15 +18,23 @@ def main():
   p22 = polynomial.calculate( polynomial(polynomial.addition(p2, p3)) )
   p32 = polynomial.calculate( polynomial(polynomial.addition(p3, p1)) )
 
-  #print(p11)
-  #print(p21)
-  #print(p31)
+  p13 = polynomial.calculate( polynomial(polynomial.integration(p1)) )
+  p23 = polynomial.calculate( polynomial(polynomial.integration(p2)) )
+  p33 = polynomial.calculate( polynomial(polynomial.integration(p3)) )
 
-  #print(p1.poly1)
+  print(p11)
+  print(p21)
+  print(p31)
 
-  print(p12)
-  print(p22)
-  print(p32)
+  print(" ")
+  
+  print(p13)
+  print(p23)
+  print(p33)
+
+  #print(p12)
+  #print(p22)
+  #print(p32)
   #END main()
   
 

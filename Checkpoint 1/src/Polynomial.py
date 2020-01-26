@@ -32,11 +32,10 @@ class polynomial(object):
 
   def addition(self, p1):
     po1 = self.poly1
-    po2 = p1.poly1
-
-    len_po1 = len(po1)
+    po2 = p1.poly1  
+    len_po1 = len(po1) # Calculate the length of the lists and places them into an variable
     len_po2 = len(po2)
-    diff_len =  max(len_po1 - len_po2, len_po2 - len_po1)
+    diff_len =  max(len_po1 - len_po2, len_po2 - len_po1) # Find out the difference between the length of both list
     add_out = []
     i = 0
 
@@ -49,14 +48,22 @@ class polynomial(object):
     for i in range( max(len_po1, len_po2) ):
       add_out += [(po1[i] + po2[i])] 
     #end loop
-   
+
     return add_out
   #END adddition()
 
-  
-
   def integration(self):
-    pass
+    integ1 = self.poly1 
+    i = 0 
+    inte_out = []
+
+    for i in range(len(integ1)):
+      inte_out += [( integ1[i]/(i+1) )]
+    #end loop
+
+    inte_out.insert(0, 2) 
+
+    return inte_out
   #END integration()
 
   def diff(self):
