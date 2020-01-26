@@ -36,14 +36,14 @@ class polynomial(object):
     diff_len =  max(len_po1 - len_po2, len_po2 - len_po1) # Find out the difference between the length of both list
     add_out = []
 
-    if len_po1 > len_po2:
-      po2 += [0] * diff_len
+    if len_po1 > len_po2:     # Decide if the which polynomial has a greater length and add additional 0s to the end to compensate 
+      po2 += [0] * diff_len   # for the missing values
     else:
       po1 += [0] * diff_len
     #end if
     
     for i in range( max(len_po1, len_po2) ):
-      add_out += [(po1[i] + po2[i])] 
+      add_out += [(po1[i] + po2[i])]  # Adding the corresponding constants together
     #end loop
 
     return add_out
@@ -52,12 +52,13 @@ class polynomial(object):
   def integration(self):
     integ1 = self.poly1 
     inte_out = []
+    constant = 2
 
     for i in range(len(integ1)):
-      inte_out += [( integ1[i]/(i+1) )]
+      inte_out += [( integ1[i]/(i+1) )] # This works out the constant of the polynomial 
     #end loop
 
-    inte_out.insert(0, 2) 
+    inte_out.insert(0, constant) # To add the constant c = 2
 
     return inte_out
   #END integration()
@@ -67,9 +68,9 @@ class polynomial(object):
     diff_out = []
 
     for i in range(len(diff1)):
-      diff_out += [(diff1[i] * i)]
+      diff_out += [(diff1[i] * i)] # This works out the differentiated constant in the polynomial 
     #end if
-    diff1.pop(0)
+    del diff_out[0] # Removes the first value that doesnt have an x term
     return diff_out
   #END diff()
 
