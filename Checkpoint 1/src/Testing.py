@@ -22,6 +22,10 @@ def main():
   p23 = polynomial.calculate( polynomial(polynomial.integration(p2)) )
   p33 = polynomial.calculate( polynomial(polynomial.integration(p3)) )
 
+  p14 = polynomial.calculate( polynomial(polynomial.differentiation(p1)) )
+  p24 = polynomial.calculate( polynomial(polynomial.differentiation(p2)) )
+  p34 = polynomial.calculate( polynomial(polynomial.differentiation(p3)) )
+
   print(p11)
   print(p21)
   print(p31)
@@ -32,9 +36,17 @@ def main():
   print(p23)
   print(p33)
 
+  print(" ")
+
   #print(p12)
   #print(p22)
   #print(p32)
+
+  print(" ")
+
+  print(p14)
+  print(p24)
+  print(p34)
   #END main()
   
 

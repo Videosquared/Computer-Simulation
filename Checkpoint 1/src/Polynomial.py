@@ -7,7 +7,6 @@ class polynomial(object):
   
 
   def calculate(self):
-    i = 0 
     output = ''
     for i in range(len(self.poly1)): # This sets the original layout to ax^n including 1x^0
       if self.poly1[i] != 0:
@@ -29,7 +28,6 @@ class polynomial(object):
     return output
   #END calculate()
 
-
   def addition(self, p1):
     po1 = self.poly1
     po2 = p1.poly1  
@@ -37,7 +35,6 @@ class polynomial(object):
     len_po2 = len(po2)
     diff_len =  max(len_po1 - len_po2, len_po2 - len_po1) # Find out the difference between the length of both list
     add_out = []
-    i = 0
 
     if len_po1 > len_po2:
       po2 += [0] * diff_len
@@ -54,7 +51,6 @@ class polynomial(object):
 
   def integration(self):
     integ1 = self.poly1 
-    i = 0 
     inte_out = []
 
     for i in range(len(integ1)):
@@ -66,8 +62,15 @@ class polynomial(object):
     return inte_out
   #END integration()
 
-  def diff(self):
-    pass
+  def differentiation(self):
+    diff1 = self.poly1
+    diff_out = []
+
+    for i in range(len(diff1)):
+      diff_out += [(diff1[i] * i)]
+    #end if
+    diff1.pop(0)
+    return diff_out
   #END diff()
 
 #END CLASS polynomial
