@@ -9,7 +9,7 @@ class polynomial(object):
   def calculate(self):
     i = 0 
     output = ''
-    for i in range(len(self.poly1)):
+    for i in range(len(self.poly1)): # This sets the original layout to ax^n including 1x^0
       if self.poly1[i] != 0:
         output += ' + %g*x^%d' %(self.poly1[i],i) 
         i += 1
@@ -31,20 +31,25 @@ class polynomial(object):
 
 
   def addition(self, p1):
-    len_p1 = len(self.poly1)
-    len_p2 = len(polynomial(p1))
+    po1 = self.poly1
+    po2 = p1.poly1
+
+    len_po1 = len(po1)
+    len_po2 = len(po2)
+    diff_len =  max(len_po1 - len_po2, len_po2 - len_po1)
     add_out = []
     i = 0
 
-    if len_p1 > len_p2:
-      for i in range(len_p1):
-        add_out = add_out.append(self.poly1[i] + p1[i])
-      #end loop
+    if len_po1 > len_po2:
+      po2 += [0] * diff_len
     else:
-      for i in range(len_p2):
-        add_out = add_out.append(self.poly1[i] + p1[i])
-      #end loop
-    #end if 
+      po1 += [0] * diff_len
+    #end if
+    
+    for i in range( max(len_po1, len_po2) ):
+      add_out += [(po1[i] + po2[i])] 
+    #end loop
+   
     return add_out
   #END adddition()
 
