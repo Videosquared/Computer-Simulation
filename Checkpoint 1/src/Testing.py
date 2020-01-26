@@ -1,76 +1,32 @@
-#from Polynomials.py import polynomial
+from Polynomial import polynomial
 
 def main():
+  
   const1 = [2,0,4,-1,0,6]
   const2 = [-1,-3,0,4.5]
-    
-  selected = const2
-  """ 
-  test1 = polynomial(selected)
-  print(test1)
-  """
-  i = 0 
-  output = ''
-  for i in range(len(selected)):
-    if selected[i] != 0:
-      output += ' + %g*x^%d' %(selected[i],i)
-      i += 1
-    else:
-      i += 1
+  const3 = [5,2,0,0,0,2,-31,333,82721]
 
-  print(output, end=" ")
+  p1 = polynomial(const1)
+  p2 = polynomial(const2)
+  p3 = polynomial(const3)
 
+  p11 = polynomial.calculate(p1)
+  p21 = polynomial.calculate(p2)
+  p31 = polynomial.calculate(p3)
 
+  p12 = polynomial.addition(p1, p2)
+  p22 = polynomial.addition(p2, p3)
+  p32 = polynomial.addition(p3, p1)
 
+  print(p11)
+  print(p21)
+  print(p31)
 
-
-main()
-         
-     
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-"""
-class Test:
-  Const1 = [2,0,4,-1,0,6]
-  Const2 = [-1,-3,0,4.5]
-    
-    
-    p1 = polynomial(constants1)
-    p1.print()
-
-
-
-
-selected = Const1
-
-class polynomial(object):
-
-  def __init__(self, constants):
-    self.coeff = constants
-
-  def __cal__(self):
-    print (self.coeff)
-
-
+  print(p12)
+  print(p22)
+  print(p32)
   
 
-
-#print(Const1, end = "", flush = True)
-#print(Const2, end = "", flush = True)
-    
-class Test(object):
-    print("hello")
-    """
-    
-
-
+# To start main function automatically 
+if __name__ == "__main__":
+  main()

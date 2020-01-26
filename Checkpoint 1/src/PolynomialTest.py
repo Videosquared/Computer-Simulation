@@ -1,4 +1,4 @@
-from Polynomial.py import Polynomial
+from Polynomial import polynomial
 
 class PolynomialTest(object):
     const1 = [2,0,4,-1,0,6]
