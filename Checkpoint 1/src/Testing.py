@@ -21,15 +21,15 @@ def main():
   p22 = polynomial.calculate( polynomial(polynomial.addition(p2, p3)) )
   p32 = polynomial.calculate( polynomial(polynomial.addition(p3, p1)) )
 
-  # This calculates all the integration of the polynomials 
-  p13 = polynomial.calculate( polynomial(polynomial.integration(p1)) )
-  p23 = polynomial.calculate( polynomial(polynomial.integration(p2)) )
-  p33 = polynomial.calculate( polynomial(polynomial.integration(p3)) )
-
   # This calculates all the first derivative of the polynomials
   p14 = polynomial.calculate( polynomial(polynomial.differentiation(p1)) )
   p24 = polynomial.calculate( polynomial(polynomial.differentiation(p2)) )
   p34 = polynomial.calculate( polynomial(polynomial.differentiation(p3)) )
+
+  # This calculates all the integration of the polynomials 
+  p13 = polynomial.calculate( polynomial( polynomial.integration( polynomial( polynomial.differentiation(p1)) ) ) )
+  p23 = polynomial.calculate( polynomial( polynomial.integration( polynomial( polynomial.differentiation(p2)) ) ) )
+  p33 = polynomial.calculate( polynomial( polynomial.integration( polynomial( polynomial.differentiation(p3)) ) ) )
 
   # This is p1 as the main P(x)
   print("This is the original P(x):")
