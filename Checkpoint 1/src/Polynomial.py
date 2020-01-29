@@ -49,10 +49,10 @@ class polynomial(object):
     return add_out
   #END adddition()
 
-  def integration(self):
+  def integration(self, constg):
     integ1 = self.poly1 
     inte_out = []
-    constant = 2
+    constant = constg
 
     for i in range(len(integ1)):
       inte_out += [( integ1[i]/(i+1) )] # This works out the constant of the polynomial 

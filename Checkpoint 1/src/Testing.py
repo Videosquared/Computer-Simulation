@@ -5,6 +5,7 @@ def main():
   const1 = [2,0,4,-1,0,6] 
   const2 = [-1,-3,0,4.5]
   const3 = [5,2,0,0,0,2,-31,3,8]
+  inteConst = 2
 
   p1 = polynomial(const1)
   p2 = polynomial(const2)
@@ -27,9 +28,9 @@ def main():
   p34 = polynomial.calculate( polynomial(polynomial.differentiation(p3)) )
 
   # This calculates all the integration of the polynomials 
-  p13 = polynomial.calculate( polynomial( polynomial.integration( polynomial( polynomial.differentiation(p1)) ) ) )
-  p23 = polynomial.calculate( polynomial( polynomial.integration( polynomial( polynomial.differentiation(p2)) ) ) )
-  p33 = polynomial.calculate( polynomial( polynomial.integration( polynomial( polynomial.differentiation(p3)) ) ) )
+  p13 = polynomial.calculate( polynomial( polynomial.integration( polynomial( polynomial.differentiation(p1)), inteConst ) ) )
+  p23 = polynomial.calculate( polynomial( polynomial.integration( polynomial( polynomial.differentiation(p2)), inteConst ) ) )
+  p33 = polynomial.calculate( polynomial( polynomial.integration( polynomial( polynomial.differentiation(p3)), inteConst ) ) )
 
   # This is p1 as the main P(x)
   print("This is the original P(x):")
