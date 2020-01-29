@@ -41,6 +41,7 @@ def main():
   print("This is the integrated if P(x):")
   print(p13)
   
+  """
   print(" ") # Gap between the lines of code
   
   # This is p2 as the main P(x)
@@ -64,6 +65,7 @@ def main():
   print(p34)
   print("This is the integrated if P(x):")
   print(p33)
+  """
   #END main()
   
 
