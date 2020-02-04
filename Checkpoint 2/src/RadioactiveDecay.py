@@ -31,7 +31,7 @@ class RadDecay(object):
     #flag = False 
     num_decayed = 0 
     out_array = np.zeros((self.arraySize,self.arraySize))
-    radTime = 0.00
+    radTime = 0.0
 
     while True:
       if num_decayed == ((self.arraySize * self.arraySize) / 2):
