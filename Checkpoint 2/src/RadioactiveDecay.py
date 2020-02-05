@@ -9,32 +9,17 @@ class RadDecay(object):
     self.decayConst = decay_Const
     self.timeStamp = time_Stamp
   #END __init__()
-
-
-  # This will display all the iterations of the decay and then
-  # display the final half life when the flag is set to true
-  def display(self):
-    pass
-    """while True:
-      if flag == True:
-        print(time)
-        print(initail nuclei)
-        print(final nuclei)
-        print(simulated half-life)
-        print(actual halflife )
-        break"""
-  #END display()
   
   # This starts an infinite loop to calculate the half life of the
-  # element and then return the time
-  def calculate(self):
+  # element and then display it in an array form.
+  def calculateDecay(self):
     #flag = False 
     num_decayed = 0 
     out_array = np.zeros((self.arraySize,self.arraySize))
-    radTime = 0.0
+    radTime = self.timeStamp
 
     while True:
-      if num_decayed == ((self.arraySize * self.arraySize) / 2):
+      if num_decayed >= ((self.arraySize * self.arraySize) / 2):
         break
       else:
         for i in range(self.arraySize):
@@ -42,17 +27,18 @@ class RadDecay(object):
             if out_array[i,j] == 0:
               rnd_num = random.random()
               probability = (self.decayConst * radTime)
-              if probability <= rnd_num:
+              if rnd_num <= probability:
                 out_array[i,j] = 1
                 num_decayed += 1
-              #end if 
-            #end if 
-            radTime += self.timeStamp
-          #end for 
-        #end for
-      #end if 
-    #end while
-    return out_array
+
+      radTime += self.timeStamp
+  
+    np.set_printoptions(threshold=np.inf, linewidth = np.inf)
+    print(out_array)
+    print("\n")
+    print(radTime)
+    print(num_decayed)
+    print(rnd_num)
   #END calculate()
 
   # This is used to calculate the actual half life of the element

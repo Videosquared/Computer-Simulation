@@ -13,12 +13,9 @@ def main():
   time_Stamp = float(input("Please enther the timestamp (Δt): "))
 
   rad1 = RadDecay(decay_Const, array_Size, time_Stamp)
-  rad2 = RadDecay.calculate(rad1)
+  RadDecay.calculateDecay(rad1)
   #rad3 = RadDecay.calculateActual(rad1)
   #RadDecay.display(rad1, rad2, rad3)
-
-  np.set_printoptions(threshold=np.inf, linewidth = np.inf)
-  print(rad2)
   
   
 """
