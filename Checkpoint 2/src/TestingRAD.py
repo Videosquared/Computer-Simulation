@@ -1,9 +1,5 @@
 from RadioactiveDecay import *
 
-import os
-import sys
-import numpy as np
-
 # This will ask the user to input the values required and then call the class to start
 # the simulation. 
 def main():
@@ -14,17 +10,9 @@ def main():
 
   rad1 = RadDecay(decay_Const, array_Size, time_Stamp)
   RadDecay.calculateDecay(rad1)
+  RadDecay.calculateActual(rad1)
   #rad3 = RadDecay.calculateActual(rad1)
   #RadDecay.display(rad1, rad2, rad3)
-  
-  
-"""
-
-test = np.zeros((array_Size, array_Size))
-
-print(test)
-test[0,0] = 1
-"""
   
 
 #END main()

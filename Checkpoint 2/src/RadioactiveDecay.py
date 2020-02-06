@@ -12,11 +12,10 @@ class RadDecay(object):
   
   # This starts an infinite loop to calculate the half life of the
   # element and then display it in an array form.
-  def calculateDecay(self):
-    #flag = False 
+  def calculateDecay(self): 
     num_decayed = 0 
     out_array = np.zeros((self.arraySize,self.arraySize))
-    radTime = self.timeStamp
+    radTime = 0.0
 
     while True:
       if num_decayed >= ((self.arraySize * self.arraySize) / 2):
@@ -25,9 +24,9 @@ class RadDecay(object):
         for i in range(self.arraySize):
           for j in range(self.arraySize):
             if out_array[i,j] == 0:
-              rnd_num = random.random()
-              probability = (self.decayConst * radTime)
-              if rnd_num <= probability:
+              rnd_num = (random.random())
+              probability = (self.decayConst * self.timeStamp)
+              if rnd_num < probability:
                 out_array[i,j] = 1
                 num_decayed += 1
 
@@ -36,15 +35,18 @@ class RadDecay(object):
     np.set_printoptions(threshold=np.inf, linewidth = np.inf)
     print(out_array)
     print("\n")
-    print(radTime)
-    print(num_decayed)
-    print(rnd_num)
+    print("The simulated half life is: ", round(radTime, 2), " mins")
+    print("Number of nuclei decayed: ", num_decayed)
+    print("The original number of nuclei: ", (self.arraySize * self.arraySize))
   #END calculate()
 
   # This is used to calculate the actual half life of the element
-  # using the formula and return the value. 
+  # using the formula and display the value. 
   def calculateActual(self):
-    pass
+    actual_time = np.log(2)/self.decayConst
+    actual_time = round(actual_time, 2)
+
+    print("The actual value of half life (using decay consant): ", actual_time , " mins")
   #END calculateActual()
 
 
