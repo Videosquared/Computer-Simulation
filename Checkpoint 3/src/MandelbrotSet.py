@@ -1,7 +1,7 @@
 import numpy as np 
 import matplotlib.pyplot as plt 
 
-class MandelbrotSet(object):
+class MandelbrotSet:
     
     def __init__(self, size_of_x, size_of_y, max_iterations):
         self.size_x = size_of_x
@@ -11,12 +11,12 @@ class MandelbrotSet(object):
     # This is used to calculate the mantelbrot set and displaying
     # it in a graph
     def calculate_Man_set(self):
-        x = np.linspace(-2.025,0.6, self.size_x)
-        y = np.linspace(-1.125,1.125, self.size_y)
+        x_points = np.linspace(-2.025,0.6, self.size_x)
+        y_points = np.linspace(-1.125,1.125, self.size_y)
         result = np.zeros((self.size_x, self.size_y), dtype=int)
         
-        xx, yy = np.meshgrid(x, y)
-        grid = xx + 1j*yy
+        x_coord, y_coord = np.meshgrid(x_points, y_points)
+        grid = x_coord + 1j*y_coord
         
         for i in range(self.size_x):
             for j in range(self.size_y):
@@ -24,12 +24,12 @@ class MandelbrotSet(object):
                 for k in range(self.max_ite):
                     if abs(z) <= 2:
                         z = z*z + grid[j,i]
-                        result[j,i] = k
+                        result[j,i] = k+1
                     else:
-                        result[j,i] = k
+                        result[j,i] = k+1
                         break
 
-        plt.imshow(result, interpolation='none', cmap='hot', extent = (-2.025, 0.6, -1.125, 1.125))
+        plt.imshow(result, cmap='hot', extent = (-2.025, 0.6, -1.125, 1.125))
         plt.xlabel('Re(c)')
         plt.ylabel('Im(c)')
         plt.title('Mandelbrot Set')
