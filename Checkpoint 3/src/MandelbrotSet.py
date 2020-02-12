@@ -13,11 +13,11 @@ class MandelbrotSet:
     def calculate_Man_set(self):
         x_points = np.linspace(-2.025,0.6, self.size_x)
         y_points = np.linspace(-1.125,1.125, self.size_y)
-        result = np.zeros((self.size_x, self.size_y), dtype=int) # This array is used to store the number of iterations and used to plot graph
-        
         x_coord, y_coord = np.meshgrid(x_points, y_points)
         grid = x_coord + 1j*y_coord
         
+        result = np.zeros((self.size_x, self.size_y), dtype=int) # This array is used to store the number of iterations and used to plot graph
+                
         # This is use to iterate thru the array grid using 2 loops the grid is in the format [y, x]
         for i in range(self.size_x):
             for j in range(self.size_y):
