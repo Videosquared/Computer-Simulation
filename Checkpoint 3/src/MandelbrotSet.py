@@ -43,8 +43,8 @@ class MandelbrotSet:
 
 # This will start the simulation
 def main():
-    size_of_x = 800 # these determines the size of the graph and the quality, these can also create an rectangle graph as well
-    size_of_y = 800
+    size_of_x = 1000 # these determines the size of the graph and the quality, these can also create an rectangle graph as well
+    size_of_y = 1000
     max_iterations = 255
 
     man_set1 = MandelbrotSet(size_of_x, size_of_y, max_iterations)
