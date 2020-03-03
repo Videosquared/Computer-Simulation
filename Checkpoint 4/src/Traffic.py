@@ -12,13 +12,15 @@ class Traffic:
         self.numOfCars = int(self.carDensity * self.roadLength)
         self.roadArray = np.zeros(self.roadLength, dtype=int)
         self.averageSpeed = 0
-        self.printArray = np.zeros((self.numOfIterations, self.roadLength), dtype=int) #  This is for printing of the road to show it changing over time
+        # This is for printing of the road to show it changing over time
+        self.printArray = np.zeros((self.numOfIterations, self.roadLength), dtype=int)
         self.carDensityArray = np.linspace(0, 1, numberOfCarDensityChecks) 
-        self.steadyStateArray = np.zeros(numberOfCarDensityChecks) # This is used to help print the gradual increase in car density
+        # This is used to help print the gradual increase in car density
+        self.steadyStateArray = np.zeros(numberOfCarDensityChecks) 
 
     # This will move the car along the road using the periodic 
     # boundary conditions. This also uses an counter to calculate
-    # an average speed of the car.
+    # an average speed of the car.s
     def calculate(self):
         if self.numOfCars == 0:
             self.averageSpeed = 0
@@ -96,7 +98,8 @@ class Traffic:
     def showGraphs(self):
         plt.show()
 
-
+# This is the method that starts the program an then asks the user for the required inputs
+# to run the program. 
 def main():
     numberOfIterations = int(input("Please enter the max number of iterations: "))
     lengthOfRoad = int(input("Please enter the length of the road (N): "))
