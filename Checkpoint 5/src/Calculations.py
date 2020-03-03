@@ -15,8 +15,14 @@ class Calculations():
         currentTime = 0.0
 
         for i in range(self.numOfIter):
+            # These 2 lines are for testing delete when done
             print("Mars Pos:    ", mars.position)
             print("Phobos Pos:", phobos.position)
+
+            mars.positionArray.append(mars.position)
+            phobos.positionArray.append(phobos.position)
+            mars.velocityArray.append(mars.velocity)
+            phobos.velocityArray.append(phobos.velocity)
 
             newMarsPos = self.newPosMars(mars, phobos)
             newMarsVelo = self.newVelocityMars(mars, phobos)
@@ -26,11 +32,6 @@ class Calculations():
             Planets.updateValues(mars, newMarsPos, newMarsVelo)
             Planets.updateValues(phobos, newPhobosPos, newPhobosVelo)
 
-        # print(self.calculateForceMars(mars, phobos))
-        # print(self.calculateForcePhobos(mars, phobos))
-        # print(self.calculatAccPhobos(mars, phobos))
-        # print(self.calculatAccMars(mars, phobos))
-        # print(self.newVelocityMars(mars, phobos))
 
     def calculateForce(self, mars, phobes, magR, unitR):
         tempForce = self.gravitationalConst*((mars.mass*phobes.mass)/ magR**2)

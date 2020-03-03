@@ -64,7 +64,7 @@ class SineAnimation1(object):
 
     def init(self):
         # initialiser for animator
-        return self.patch,
+        return self.patch
 
     def animate(self, i):
         # update the position of the circle
@@ -89,7 +89,7 @@ class SineAnimation1(object):
         ax.set_ylabel('sin(x)')
 
         # create the animator
-        anim = FuncAnimation(fig, self.animate, init_func = self.init, frames = self.niter, repeat = False, interval = 50, blit = True)
+        anim = FuncAnimation(fig, self.animate, frames = self.niter, repeat = False, interval = 50, blit = True)
 
         # show the plot
         plt.show()
