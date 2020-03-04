@@ -12,9 +12,11 @@ def main():
     index = 3 
     while index < len(allLines):
         if index < 4:
+            # This will put the time step and the number of iterations into the calcultions class
             simulationData = Calculations(int(allLines[1].replace('\n', '')), float(allLines[3].replace('\n', '')))
             index += 2
         else:
+            # This will hold all the planets information in a list 
             planetList.append(allLines[index]) 
             index += 1
 

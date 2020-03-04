@@ -12,6 +12,7 @@ class Traffic:
         self.numOfCars = int(self.carDensity * self.roadLength)
         self.roadArray = np.zeros(self.roadLength, dtype=int)
         self.averageSpeed = 0
+        self.averageSpeedArray = list()
         # This is for printing of the road to show it changing over time
         self.printArray = np.zeros((self.numOfIterations, self.roadLength), dtype=int)
         self.carDensityArray = np.linspace(0, 1, numberOfCarDensityChecks) 
@@ -43,6 +44,8 @@ class Traffic:
                             tempRoad[i] = 1
                         else: 
                             tempRoad[i] = 0 
+                self.averageSpeedArray.append(self.averageSpeed)
+            
                 
                 self.roadArray = tempRoad.copy()
                 self.averageSpeed = (counter/self.numOfCars)
@@ -75,6 +78,7 @@ class Traffic:
     # This will print the graph of the acerage speed against change in 
     # car density.
     def printGraph(self):
+
         plt.figure(2)
         plt.plot(self.carDensityArray, self.steadyStateArray)
         plt.xlabel('Change in Car Density')
@@ -88,6 +92,15 @@ class Traffic:
 
     # This will print the road into an grid and shows the road change over time
     def printVisualRep(self):
+        plt.figure(3)
+        xVal = np.linspace(0, len(self.averageSpeedArray), len(self.averageSpeedArray))
+        plt.plot(xVal, self.averageSpeedArray)
+        plt.xlabel('Time')
+        plt.ylabel('Average Speed')
+        plt.title("Average Speed against Time")
+        for i in range(self.numOfIterations):
+            print("Average speed is", self.averageSpeedArray[i])
+
         plt.figure(1)
         plt.imshow(self.printArray, interpolation='none', origin='lower', cmap='hot')
         plt.xlabel('Road from left to right (->)')
