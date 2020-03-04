@@ -1,5 +1,6 @@
 from Planets import Planets
 from Calculations import Calculations
+from Animate import Animate
 
 def main():
     planetList = list()
@@ -26,6 +27,9 @@ def main():
     
     # This will trigger the simulation an begin. 
     Calculations.runSimulation(simulationData, mars, phobos)
+
+    Ani1 = Animate(mars.positionArray, phobos.positionArray)
+    Ani1.display()
 
 
 

@@ -16,8 +16,8 @@ class Calculations():
 
         for i in range(self.numOfIter):
             # These 2 lines are for testing delete when done
-            print("Mars Pos:    ", mars.position)
-            print("Phobos Pos:", phobos.position)
+            #print("Mars Pos:    ", mars.position)
+            #print("Phobos Pos:", phobos.position)
 
             mars.positionArray.append(mars.position)
             phobos.positionArray.append(phobos.position)
