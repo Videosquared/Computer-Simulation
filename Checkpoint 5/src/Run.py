@@ -8,6 +8,7 @@ def main():
     # Read the data from the file
     allLines = Calculations.readFromFile("Data.txt")
     
+    # This splits the lines read in to the right classes
     index = 3 
     while index < len(allLines):
         if index < 4:
@@ -28,6 +29,7 @@ def main():
     # This will trigger the simulation an begin. 
     Calculations.runSimulation(simulationData, mars, phobos)
 
+    # This will start the animation process
     Ani1 = Animate(mars.positionArray, phobos.positionArray, simulationData.totalKineticEnergyArray)
     Ani1.display()
 
