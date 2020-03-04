@@ -10,6 +10,7 @@ class Calculations():
         self.gravitationalConst = 6.67408e-11
         self.tempPosition = tuple()
         self.tempVelocity = tuple()
+        self.totalKineticEnergyArray = list()
 
     def runSimulation(self, mars, phobos):
         currentTime = 0.0
@@ -19,6 +20,7 @@ class Calculations():
             #print("Mars Pos:    ", mars.position)
             #print("Phobos Pos:", phobos.position)
 
+            self.totalKineticEnergyArray.append(self.totalKineticEnergy(mars, phobos))
             mars.positionArray.append(mars.position)
             phobos.positionArray.append(phobos.position)
             mars.velocityArray.append(mars.velocity)
@@ -82,6 +84,11 @@ class Calculations():
         newPos = phobos.position[0] + (nextVelo[0]*self.timeStepLength), phobos.position[1] + (nextVelo[1]*self.timeStepLength)
         return newPos
 
+    def totalKineticEnergy(self, mars, phobos):
+        magM = math.sqrt(mars.velocity[0]**2 + mars.velocity[1]**2)
+        magP = math.sqrt(phobos.velocity[0]**2 + phobos.velocity[1]**2)
+        totalKEnergy = (0.5 * mars.mass * magM**2 )+(0.5 * phobos.mass * magP**2)
+        return totalKEnergy
 
     @staticmethod
     def splitData(planetInfo):

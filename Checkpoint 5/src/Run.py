@@ -28,7 +28,7 @@ def main():
     # This will trigger the simulation an begin. 
     Calculations.runSimulation(simulationData, mars, phobos)
 
-    Ani1 = Animate(mars.positionArray, phobos.positionArray)
+    Ani1 = Animate(mars.positionArray, phobos.positionArray, simulationData.totalKineticEnergyArray)
     Ani1.display()
 
 

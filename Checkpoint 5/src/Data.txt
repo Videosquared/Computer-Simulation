@@ -1,7 +1,7 @@
 Number of Iterations:
 20000
 Time Step:
-10
+5
 Planets/Bodies of Mass:
 Mars 6.4185e23 0 (0.0,0.0) (0.0,0.0)
 Phobos 1.06e16 9.3773e6 (9.3773e6,0.0) (0.0,2137.339794)
