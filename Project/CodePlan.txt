@@ -1,0 +1,115 @@
+COMPUTER SIMULATION PROJECT PLANNING
+____________________________________
+
+MAIN CLASS -------------------------------------------------------------------------------------------------------
+
+STATIC METHOD - MAIN --
+
+	CALL SIM UTILS 
+		TO READ FROM FILE
+	SEPERATE THE DATA GIVEN BACK FROM VALUES AND BODIES
+	SET UP THE SIMUTILS CLASS WITH THE SIMULATION CONSTANTS
+	CALL SIMUTILS 
+		TO SEPERATE THE DATA INTO A INTO LIST OF LIST FOR THE BODIES 
+	CALL SIMULTILS 
+		MAKE THE LIST INTO CORRECT DATA TYPES FOR THE BODY CLASS
+	START LOOP FOR THE NUMBER OF PLANETS
+		CALL THE BODY CLASS TO MAKE AN ARRAY OF INSTANCES OF THE PLANETS/BODIES OF MASS
+	CALL RUN SIMULATION IN SIMUTILS CLASS (PLANETS LIST)
+		START THE SIMULATION 		
+
+BODY CLASS -----------------------------------------------------------------------------------------------------
+
+INSTANCE VARIABLES -
+
+	name 			- STRING
+	radius 			- DOUBLE
+	mass 			- DOUBLE 
+	orbitRadius 	- DOUBLE 
+	position 		- NUMPY ARRAY[2]
+	valocity 		- NUMPY ARRAY[2]
+	acceleration 	- NUMPY ARRAY[2]
+
+CONSTRUCTOR -- 
+	
+	SET ALL THE INSTANCE VARIABLES PROVIDED FOR EACH PLANET
+
+
+
+
+
+SIMULATION UTILS CLASS --------------------------------------------------------------------
+
+INSTANCE VARIABLES -
+
+	numberOfIter 	- INT
+	gravityConst 	- DOUBLE
+	tempAccel 		- NP ARRAY[2]
+	tempVelo 		- NP ARRAY[2]
+	tempPosition 	- NP ARRAY[2]
+
+INSTANCE METHOD - RUN SIMULATION --
+
+	OVERALL LOOP THROUGH THE NUMBER OF ITERATIONS
+		RECORD CURRENT POSITION, VELOCITY, ACCELERATION TO THE CORRESPONDING LISTS IN BODY CLASS
+		CALL BODY CLASS TO CALCULATE VELOCITY AND STORE IN THE CORRESPONDING TEMP VARIABLE 
+		CALL BODY CLASS TO CALCULATE ACCELERATION AND STORE IN THE CORRESPONDING TEMP VARIABLE
+		CALL BODY CLASS TO CALCULATE THE POSITION AND STORE IN THE CORRESPONDING TEMP VARIABLE
+		CALL BODY CLASS TO UPDATE THE TEMP VALUES TO THE CURRENT VALUES
+
+STATIC METHOD - READ FROM FILE -- 
+
+	OPEN THE FILE
+	READ EACH LINE INTO AN LIST
+	CLOSE THE FILE
+	RETURN THE LIST
+
+STATIC METHOD - SPLIT DATA --
+
+	CREATE EMPTY LIST 
+	REMOVE THE "\n"
+	REMOVE UNECCESSARY BRACKETS
+	SPLIT THE STRING BY "/" INTO THE EMPTY LIST
+	CAST TO THE CORRECT DATA TYPES INSIDE THE SAME LIST
+	RETURN THE LIST WITH THE CORRECT DATA TYPES
+
+
+READ ME FILE ------------------------------------------------------------------------
+
+	To run the program, all you need to do is to run the Main class (Main.py) and the program will automatically start without 
+	input from the user. If you wish to test if the code structure will need to change for additional planets please add the data
+	to the Data.txt file in the format shown below.
+
+
+	Planet info format: (Please include the "/")
+
+	name/mass/orbitRadius/position/velocity/acceleration
+
+	**PLEASE HAVE AN EMPTY LINE AFTER THE LAST ENTRY**
+	**NOTES**
+		For calculation purposes, please make sure the initial position of the planet is on the x-axis
+
+
+DATA --------------------------------------------------------------------------------
+
+
+INPUT DATA FORMAT
+
+	name/radius/mass/orbitRadius/position/velocity/acceleration
+	string/double/double/double/numpy array[2]/numpy array[2]/numpy array[2]
+
+INPUT VALUES
+	
+	Sun/696340.0/1.9891e30/0.0/(0,0)/(0,0)/(0,0)
+	Mercury/2439.7/3.285e23/46000000
+	Venus/6051.8/4.867e24/
+	Earth/6371.0/5.9736e24/
+	Mars/3389.5/6.39e23/
+	Jupiter/69911/1.898e27/
+	Saturn/58232/5.683e26/
+	Uranus/25362/1.024e26/
+	Neptune/24622/8.681e25/
+	Pluto/1188.3/1.30900e22/
+
+	Mars 6.4185e23 0 (0.0,0.0) (0.0,0.0)
+Phobos 1.06e16 9.3773e6 (9.3773e6,0.0) (0.0,2137.339794)
